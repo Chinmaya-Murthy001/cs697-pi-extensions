@@ -1,0 +1,188 @@
+
+> cs697-pi-extensions@0.1.0 test
+> node --test "tests/**/*.test.ts"
+
+TAP version 13
+# Subtest: 23:59 with no prior reminder -> no reminder
+ok 1 - 23:59 with no prior reminder -> no reminder
+  ---
+  duration_ms: 1.176714
+  type: 'test'
+  ...
+# Subtest: 00:00 with no reminder for this date -> remind
+not ok 2 - 00:00 with no reminder for this date -> remind
+  ---
+  duration_ms: 0.855074
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:13:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:14:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: 00:01 already reminded today -> no duplicate
+ok 3 - 00:01 already reminded today -> no duplicate
+  ---
+  duration_ms: 0.174311
+  type: 'test'
+  ...
+# Subtest: 05:59 with no reminder today -> remind
+not ok 4 - 05:59 with no reminder today -> remind
+  ---
+  duration_ms: 0.245285
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:22:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:23:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 06:00 or noon -> no reminder
+ok 5 - 06:00 or noon -> no reminder
+  ---
+  duration_ms: 0.16283
+  type: 'test'
+  ...
+# Subtest: midnight on the next date -> remind again
+not ok 6 - midnight on the next date -> remind again
+  ---
+  duration_ms: 0.174061
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:31:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:32:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: late-night window is [00:00, 06:00)
+not ok 7 - late-night window is [00:00, 06:00)
+  ---
+  duration_ms: 0.175984
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:35:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:36:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: date key is built from LOCAL fields, not UTC
+not ok 8 - date key is built from LOCAL fields, not UTC
+  ---
+  duration_ms: 0.122603
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:42:1'
+  failureType: 'testCodeFailure'
+  error: 'not implemented'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    localDateKey (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/extensions/midnight-reminder/policy.ts:7:9)
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:44:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: reminder message matches the specification
+not ok 9 - reminder message matches the specification
+  ---
+  duration_ms: 0.527552
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:48:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + ''
+    - 'It is after midnight. Consider saving your work and getting some sleep.'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'It is after midnight. Consider saving your work and getting some sleep.'
+  actual: ''
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/policy.test.ts:49:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 3
+# fail 6
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 214.846694
+npm notice
+npm notice New major version of npm available! 10.9.8 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice
