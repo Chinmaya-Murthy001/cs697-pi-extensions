@@ -1,0 +1,196 @@
+TAP version 13
+# Subtest: without BEDTIME_FAKE_NOW the clock is real time
+ok 1 - without BEDTIME_FAKE_NOW the clock is real time
+  ---
+  duration_ms: 1.826889
+  type: 'test'
+  ...
+# Subtest: BEDTIME_FAKE_NOW starts a simulated local clock that keeps ticking
+ok 2 - BEDTIME_FAKE_NOW starts a simulated local clock that keeps ticking
+  ---
+  duration_ms: 0.438553
+  type: 'test'
+  ...
+# Subtest: an invalid BEDTIME_FAKE_NOW is rejected with a clear error
+ok 3 - an invalid BEDTIME_FAKE_NOW is rejected with a clear error
+  ---
+  duration_ms: 0.502795
+  type: 'test'
+  ...
+# Subtest: loading the extension registers /bedtime-test and creates no timer
+ok 4 - loading the extension registers /bedtime-test and creates no timer
+  ---
+  duration_ms: 1.186253
+  type: 'test'
+  ...
+# Subtest: /bedtime-test shows the message without changing automatic reminder state
+ok 5 - /bedtime-test shows the message without changing automatic reminder state
+  ---
+  duration_ms: 1.166305
+  type: 'test'
+  ...
+# Subtest: interactive startup after midnight shows a visible warning immediately
+ok 6 - interactive startup after midnight shows a visible warning immediately
+  ---
+  duration_ms: 0.220148
+  type: 'test'
+  ...
+# Subtest: non-interactive mode "print" creates no timer and no notification
+ok 7 - non-interactive mode "print" creates no timer and no notification
+  ---
+  duration_ms: 0.175263
+  type: 'test'
+  ...
+# Subtest: non-interactive mode "json" creates no timer and no notification
+ok 8 - non-interactive mode "json" creates no timer and no notification
+  ---
+  duration_ms: 0.357038
+  type: 'test'
+  ...
+# Subtest: non-interactive mode "rpc" creates no timer and no notification
+ok 9 - non-interactive mode "rpc" creates no timer and no notification
+  ---
+  duration_ms: 0.136028
+  type: 'test'
+  ...
+# Subtest: session_shutdown clears the timer and is idempotent
+ok 10 - session_shutdown clears the timer and is idempotent
+  ---
+  duration_ms: 0.317473
+  type: 'test'
+  ...
+# Subtest: reload/new session leaves one timer and never uses the old context
+ok 11 - reload/new session leaves one timer and never uses the old context
+  ---
+  duration_ms: 1.136559
+  type: 'test'
+  ...
+# Subtest: session_start without a prior shutdown still keeps a single timer
+ok 12 - session_start without a prior shutdown still keeps a single timer
+  ---
+  duration_ms: 0.470894
+  type: 'test'
+  ...
+# Subtest: 23:59 with no prior reminder -> no reminder
+ok 13 - 23:59 with no prior reminder -> no reminder
+  ---
+  duration_ms: 1.029485
+  type: 'test'
+  ...
+# Subtest: 00:00 with no reminder for this date -> remind
+ok 14 - 00:00 with no reminder for this date -> remind
+  ---
+  duration_ms: 0.194089
+  type: 'test'
+  ...
+# Subtest: 00:01 already reminded today -> no duplicate
+ok 15 - 00:01 already reminded today -> no duplicate
+  ---
+  duration_ms: 0.132241
+  type: 'test'
+  ...
+# Subtest: 05:59 with no reminder today -> remind
+ok 16 - 05:59 with no reminder today -> remind
+  ---
+  duration_ms: 0.114768
+  type: 'test'
+  ...
+# Subtest: 06:00 or noon -> no reminder
+ok 17 - 06:00 or noon -> no reminder
+  ---
+  duration_ms: 0.125228
+  type: 'test'
+  ...
+# Subtest: midnight on the next date -> remind again
+ok 18 - midnight on the next date -> remind again
+  ---
+  duration_ms: 0.135227
+  type: 'test'
+  ...
+# Subtest: late-night window is [00:00, 06:00)
+ok 19 - late-night window is [00:00, 06:00)
+  ---
+  duration_ms: 0.174562
+  type: 'test'
+  ...
+# Subtest: date key is built from LOCAL fields, not UTC
+ok 20 - date key is built from LOCAL fields, not UTC
+  ---
+  duration_ms: 0.117834
+  type: 'test'
+  ...
+# Subtest: reminder message matches the specification
+ok 21 - reminder message matches the specification
+  ---
+  duration_ms: 0.265905
+  type: 'test'
+  ...
+# Subtest: checks every 30 seconds
+ok 22 - checks every 30 seconds
+  ---
+  duration_ms: 1.155896
+  type: 'test'
+  ...
+# Subtest: crossing midnight while idle delivers within 60 simulated seconds
+ok 23 - crossing midnight while idle delivers within 60 simulated seconds
+  ---
+  duration_ms: 0.608866
+  type: 'test'
+  ...
+# Subtest: repeated timer checks do not duplicate the reminder
+ok 24 - repeated timer checks do not duplicate the reminder
+  ---
+  duration_ms: 1.648069
+  type: 'test'
+  ...
+# Subtest: startup during the late-night window reminds immediately
+ok 25 - startup during the late-night window reminds immediately
+  ---
+  duration_ms: 0.155235
+  type: 'test'
+  ...
+# Subtest: the next night reminds again
+ok 26 - the next night reminds again
+  ---
+  duration_ms: 2.78052
+  type: 'test'
+  ...
+# Subtest: no reminder between 06:00 and midnight
+ok 27 - no reminder between 06:00 and midnight
+  ---
+  duration_ms: 3.85984
+  type: 'test'
+  ...
+# Subtest: resuming from sleep inside the window reminds on the next check
+ok 28 - resuming from sleep inside the window reminds on the next check
+  ---
+  duration_ms: 0.229857
+  type: 'test'
+  ...
+# Subtest: resuming from sleep after 06:00 skips the missed reminder
+ok 29 - resuming from sleep after 06:00 skips the missed reminder
+  ---
+  duration_ms: 0.166656
+  type: 'test'
+  ...
+# Subtest: stop() clears the timer, is idempotent, and nothing fires afterwards
+ok 30 - stop() clears the timer, is idempotent, and nothing fires afterwards
+  ---
+  duration_ms: 0.392094
+  type: 'test'
+  ...
+# Subtest: start() twice does not create a second timer
+ok 31 - start() twice does not create a second timer
+  ---
+  duration_ms: 0.433934
+  type: 'test'
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 31
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 606.986809

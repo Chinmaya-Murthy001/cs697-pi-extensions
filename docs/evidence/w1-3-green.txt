@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: 23:59 with no prior reminder -> no reminder
+ok 1 - 23:59 with no prior reminder -> no reminder
+  ---
+  duration_ms: 0.975874
+  type: 'test'
+  ...
+# Subtest: 00:00 with no reminder for this date -> remind
+ok 2 - 00:00 with no reminder for this date -> remind
+  ---
+  duration_ms: 0.203426
+  type: 'test'
+  ...
+# Subtest: 00:01 already reminded today -> no duplicate
+ok 3 - 00:01 already reminded today -> no duplicate
+  ---
+  duration_ms: 0.155556
+  type: 'test'
+  ...
+# Subtest: 05:59 with no reminder today -> remind
+ok 4 - 05:59 with no reminder today -> remind
+  ---
+  duration_ms: 0.114978
+  type: 'test'
+  ...
+# Subtest: 06:00 or noon -> no reminder
+ok 5 - 06:00 or noon -> no reminder
+  ---
+  duration_ms: 0.119257
+  type: 'test'
+  ...
+# Subtest: midnight on the next date -> remind again
+ok 6 - midnight on the next date -> remind again
+  ---
+  duration_ms: 0.112343
+  type: 'test'
+  ...
+# Subtest: late-night window is [00:00, 06:00)
+ok 7 - late-night window is [00:00, 06:00)
+  ---
+  duration_ms: 0.16335
+  type: 'test'
+  ...
+# Subtest: date key is built from LOCAL fields, not UTC
+ok 8 - date key is built from LOCAL fields, not UTC
+  ---
+  duration_ms: 0.112775
+  type: 'test'
+  ...
+# Subtest: reminder message matches the specification
+ok 9 - reminder message matches the specification
+  ---
+  duration_ms: 0.258871
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 153.852684

@@ -29,4 +29,62 @@ A Pi extension that reminds the user to stop working during late-night hours.
 | 06:00 or noon | No reminder |
 | Midnight on the next date | Remind again |
 
-_Loading and test instructions are added once the extension is implemented._
+### Repository layout
+
+```
+extensions/midnight-reminder/
+  index.ts      Pi entry point: /bedtime-test, session_start / session_shutdown
+  policy.ts     pure time policy: isLateNight, localDateKey, shouldRemind
+  reminder.ts   scheduler: immediate check + every 30 s, duplicate prevention, stop()
+  clock.ts      real clock, or simulated clock via BEDTIME_FAKE_NOW
+tests/midnight-reminder/   tests (outside extension discovery) + fakes.ts test doubles
+docs/                      plan, Pi documentation notes, reflection, red/green evidence
+```
+
+### Requirements
+
+- Node.js **22.19+** (tests use the built-in `node:test` runner with native TypeScript type stripping — no `npm install` needed)
+- Pi Coding Agent (`npm install -g --ignore-scripts @earendil-works/pi-coding-agent`)
+
+### Run the tests
+
+```bash
+npm test
+```
+
+31 tests cover the policy table above, crossing midnight while idle (delivered within 60 simulated seconds), no duplicates from repeated checks, startup inside the window, resume-from-sleep inside/after the window, the next night, `/bedtime-test` not changing state, non-interactive modes, shutdown/reload cleanup and the simulated clock. Red/green output is in [`docs/evidence/`](docs/evidence/).
+
+### Load the extension in Pi
+
+```bash
+pi --extension ./extensions/midnight-reminder/index.ts
+```
+
+Then type `/bedtime-test` to preview the reminder. To install it permanently, copy the `extensions/midnight-reminder` folder into `~/.pi/agent/extensions/` (Windows: `%USERPROFILE%\.pi\agent\extensions\`) and run `/reload` in Pi.
+
+### Demo with simulated time
+
+Set `BEDTIME_FAKE_NOW` to a local date-time; the extension's clock starts there and keeps ticking. Your system clock is not changed.
+
+PowerShell (Windows):
+
+```powershell
+$env:BEDTIME_FAKE_NOW = "2026-10-05T23:59:40"
+pi --extension ./extensions/midnight-reminder/index.ts
+# leave Pi idle: within ~30 s after simulated midnight the warning appears, and only once
+Remove-Item Env:BEDTIME_FAKE_NOW
+```
+
+bash / macOS:
+
+```bash
+BEDTIME_FAKE_NOW=2026-10-05T23:59:40 pi --extension ./extensions/midnight-reminder/index.ts
+```
+
+Startup inside the window: `BEDTIME_FAKE_NOW=2026-10-06T01:00:00` shows the reminder immediately. Non-interactive: `pi -p "hi" --extension ...` creates no timer and no notification.
+
+### Where is time checked, and why not just a prompt?
+
+Time is checked only in `reminder.ts → check()`, which reads the clock on every call: once on interactive `session_start`, then every 30 s via `setInterval`. The decision itself is `policy.ts → shouldRemind()`. A prompt alone cannot do this: an idle model never runs, so nothing would wake it at midnight. A timer inside the Pi process (runtime code) has to check the clock; the reminder makes no model calls.
+
+See also [`docs/plan.md`](docs/plan.md), [`docs/pi-notes.md`](docs/pi-notes.md) and [`docs/reflection.md`](docs/reflection.md).
