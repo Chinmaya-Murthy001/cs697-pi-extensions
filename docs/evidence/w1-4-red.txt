@@ -1,0 +1,510 @@
+TAP version 13
+# Subtest: without BEDTIME_FAKE_NOW the clock is real time
+not ok 1 - without BEDTIME_FAKE_NOW the clock is real time
+  ---
+  duration_ms: 3.600777
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/clock.test.ts:5:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1000
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1000
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/clock.test.ts:7:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: BEDTIME_FAKE_NOW starts a simulated local clock that keeps ticking
+not ok 2 - BEDTIME_FAKE_NOW starts a simulated local clock that keeps ticking
+  ---
+  duration_ms: 0.518625
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/clock.test.ts:10:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + 0
+    - 1791224970000
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1791224970000
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/clock.test.ts:13:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: an invalid BEDTIME_FAKE_NOW is rejected with a clear error
+not ok 3 - an invalid BEDTIME_FAKE_NOW is rejected with a clear error
+  ---
+  duration_ms: 0.279661
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/clock.test.ts:21:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/clock.test.ts:22:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: loading the extension registers /bedtime-test and creates no timer
+not ok 4 - loading the extension registers /bedtime-test and creates no timer
+  ---
+  duration_ms: 7.688975
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:17:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(commands.has("bedtime-test"))
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:19:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: /bedtime-test shows the message without changing automatic reminder state
+not ok 5 - /bedtime-test shows the message without changing automatic reminder state
+  ---
+  duration_ms: 0.358882
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:23:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'handler')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:27:38)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: interactive startup after midnight shows a visible warning immediately
+not ok 6 - interactive startup after midnight shows a visible warning immediately
+  ---
+  duration_ms: 1.344093
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:37:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+    + []
+    - [
+    -   {
+    -     message: 'It is after midnight. Consider saving your work and getting some sleep.',
+    -     type: 'warning'
+    -   }
+    - ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0:
+      message: 'It is after midnight. Consider saving your work and getting some sleep.'
+      type: 'warning'
+  actual:
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:41:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: non-interactive mode "print" creates no timer and no notification
+ok 7 - non-interactive mode "print" creates no timer and no notification
+  ---
+  duration_ms: 0.239274
+  type: 'test'
+  ...
+# Subtest: non-interactive mode "json" creates no timer and no notification
+ok 8 - non-interactive mode "json" creates no timer and no notification
+  ---
+  duration_ms: 0.115339
+  type: 'test'
+  ...
+# Subtest: non-interactive mode "rpc" creates no timer and no notification
+ok 9 - non-interactive mode "rpc" creates no timer and no notification
+  ---
+  duration_ms: 0.153902
+  type: 'test'
+  ...
+# Subtest: session_shutdown clears the timer and is idempotent
+not ok 10 - session_shutdown clears the timer and is idempotent
+  ---
+  duration_ms: 0.410099
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:55:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:59:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: reload/new session leaves one timer and never uses the old context
+not ok 11 - reload/new session leaves one timer and never uses the old context
+  ---
+  duration_ms: 0.252519
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:65:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:72:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: session_start without a prior shutdown still keeps a single timer
+not ok 12 - session_start without a prior shutdown still keeps a single timer
+  ---
+  duration_ms: 0.409598
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:78:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/extension.test.ts:84:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: 23:59 with no prior reminder -> no reminder
+ok 13 - 23:59 with no prior reminder -> no reminder
+  ---
+  duration_ms: 1.157388
+  type: 'test'
+  ...
+# Subtest: 00:00 with no reminder for this date -> remind
+ok 14 - 00:00 with no reminder for this date -> remind
+  ---
+  duration_ms: 0.21566
+  type: 'test'
+  ...
+# Subtest: 00:01 already reminded today -> no duplicate
+ok 15 - 00:01 already reminded today -> no duplicate
+  ---
+  duration_ms: 0.126901
+  type: 'test'
+  ...
+# Subtest: 05:59 with no reminder today -> remind
+ok 16 - 05:59 with no reminder today -> remind
+  ---
+  duration_ms: 0.143753
+  type: 'test'
+  ...
+# Subtest: 06:00 or noon -> no reminder
+ok 17 - 06:00 or noon -> no reminder
+  ---
+  duration_ms: 0.127112
+  type: 'test'
+  ...
+# Subtest: midnight on the next date -> remind again
+ok 18 - midnight on the next date -> remind again
+  ---
+  duration_ms: 0.120759
+  type: 'test'
+  ...
+# Subtest: late-night window is [00:00, 06:00)
+ok 19 - late-night window is [00:00, 06:00)
+  ---
+  duration_ms: 0.197365
+  type: 'test'
+  ...
+# Subtest: date key is built from LOCAL fields, not UTC
+ok 20 - date key is built from LOCAL fields, not UTC
+  ---
+  duration_ms: 0.118665
+  type: 'test'
+  ...
+# Subtest: reminder message matches the specification
+ok 21 - reminder message matches the specification
+  ---
+  duration_ms: 0.312584
+  type: 'test'
+  ...
+# Subtest: checks every 30 seconds
+not ok 22 - checks every 30 seconds
+  ---
+  duration_ms: 1.583156
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:22:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 30000
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 30000
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:23:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: crossing midnight while idle delivers within 60 simulated seconds
+not ok 23 - crossing midnight while idle delivers within 60 simulated seconds
+  ---
+  duration_ms: 0.60548
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:26:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:31:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: repeated timer checks do not duplicate the reminder
+not ok 24 - repeated timer checks do not duplicate the reminder
+  ---
+  duration_ms: 0.244013
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:37:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:41:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: startup during the late-night window reminds immediately
+not ok 25 - startup during the late-night window reminds immediately
+  ---
+  duration_ms: 0.225979
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:47:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:50:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: the next night reminds again
+not ok 26 - the next night reminds again
+  ---
+  duration_ms: 0.206722
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:53:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 2
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 2
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:57:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: no reminder between 06:00 and midnight
+ok 27 - no reminder between 06:00 and midnight
+  ---
+  duration_ms: 0.18402
+  type: 'test'
+  ...
+# Subtest: resuming from sleep inside the window reminds on the next check
+not ok 28 - resuming from sleep inside the window reminds on the next check
+  ---
+  duration_ms: 0.264242
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:67:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:73:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: resuming from sleep after 06:00 skips the missed reminder
+ok 29 - resuming from sleep after 06:00 skips the missed reminder
+  ---
+  duration_ms: 0.140226
+  type: 'test'
+  ...
+# Subtest: stop() clears the timer, is idempotent, and nothing fires afterwards
+not ok 30 - stop() clears the timer, is idempotent, and nothing fires afterwards
+  ---
+  duration_ms: 0.464883
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:84:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:87:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: start() twice does not create a second timer
+not ok 31 - start() twice does not create a second timer
+  ---
+  duration_ms: 0.430678
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:95:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/midnight-reminder/reminder.test.ts:99:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..31
+# tests 31
+# suites 0
+# pass 14
+# fail 17
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 702.460192
