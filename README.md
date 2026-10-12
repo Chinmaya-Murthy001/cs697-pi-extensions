@@ -64,3 +64,9 @@ Example prompt with an unresolved choice:
 > Add a small config file for the midnight reminder with the reminder message and quiet hours. I haven't decided between JSON and YAML — users will edit it by hand. Don't write any code yet; just create the file.
 
 The agent calls `ask_user`; pick an option (or write your own answer) and the agent creates the file in that format. With a fully specified prompt ("…as JSON") it proceeds without asking.
+
+### Demo script
+
+Windows: `powershell -ExecutionPolicy Bypass -File scripts\demo-w2.ps1` · bash/macOS: `scripts/demo-w2.sh`
+
+It runs the ask_user tests, then starts Pi in an empty `demo-sandbox/` folder with a task that leaves JSON-vs-YAML open. The agent calls `ask_user`; choose an option (or write your own) and the agent creates the config file in that format.
