@@ -28,7 +28,8 @@ export default function askUserExtension(pi: ExtensionAPI) {
     promptSnippet: "ask_user: ask the human one important unresolved decision (2-3 options with tradeoffs)",
     promptGuidelines: [
       "Use ask_user when an unresolved choice materially changes user-visible behavior, scope, or the amount of rework, and the user has not already decided it.",
-      "Proceed without asking when the requirement is explicit, the user delegated the choice to you, or the detail is routine and reversible (names, formatting, file layout).",
+      "If the user says they have not decided something that affects the result (for example a file format users will edit, or what a feature should do), that decision is theirs: call ask_user before doing the work. Do not pick for them, even if one option seems better; put your preference in recommendation instead.",
+      "Proceed without asking only when the requirement is explicit, the user clearly told you to choose (\"whatever you think is best\"), or the detail is internal and easy to change (variable names, code formatting).",
       "Ask one question at a time; give 2-3 options with honest tradeoffs and a recommendation when you have one.",
       "If ask_user returns cancelled or unavailable, do not invent an answer: say the decision is still open and only continue with work that does not depend on it.",
       "After an answer, follow it exactly, even if it differs from your recommendation.",

@@ -59,3 +59,9 @@ test("execute reports cancellation", async () => {
   assert.equal(res.details.status, "cancelled");
   assert.match(res.content[0].text, /cancel/i);
 });
+
+test("guidelines say an undecided user-facing choice belongs to the user (observed demo failure)", () => {
+  const text = load().promptGuidelines!.join(" ");
+  assert.match(text, /not decided/i);
+  assert.match(text, /do not pick for them/i);
+});

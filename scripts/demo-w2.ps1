@@ -12,6 +12,6 @@ $sandbox = Join-Path $repo "demo-sandbox"
 New-Item -ItemType Directory -Force -Path $sandbox | Out-Null
 Get-ChildItem $sandbox -Force | Remove-Item -Recurse -Force
 Set-Location $sandbox
-$prompt = "Create a small config file for my midnight reminder with two settings: the reminder message and the quiet hours (00:00 to 06:00). I haven't decided between JSON and YAML yet, and people will edit it by hand. Only create that one file in the current folder, then show me its contents."
+$prompt = "Create a small config file for my midnight reminder with two settings: the reminder message and the quiet hours (00:00 to 06:00). I haven't decided between JSON and YAML yet - people will edit it by hand, so the format matters to me. Create the config file in the current folder, then show me its contents."
 pi --no-session --no-context-files -e (Join-Path $repo "extensions/ask-user/index.ts") $prompt
 Set-Location $repo
