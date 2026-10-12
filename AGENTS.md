@@ -7,12 +7,13 @@ Instructions for coding agents working in this repository.
 Pi Coding Agent extensions for CS 480/697 (UMass Boston, Fall 2026).
 
 - `extensions/midnight-reminder/` — W1 Midnight Reminder extension (entry point: `index.ts`).
+- `extensions/ask-user/` — W2 `ask_user` tool extension (entry point: `index.ts`).
 - `tests/` — tests, kept outside extension discovery. One folder per extension.
 - `docs/` — plan, documentation notes, and test evidence.
 
 ## Commands
 
-- Run all tests: `npm test` (Node.js >= 22.19, uses the built-in `node:test` runner and native TypeScript type stripping; no `npm install` needed).
+- Run all tests: `npm install` once, then `npm test` (Node.js >= 22.19, built-in `node:test` runner with native TypeScript type stripping).
 - Load the extension in Pi for manual testing: `pi --extension ./extensions/midnight-reminder/index.ts`
 
 ## Rules
