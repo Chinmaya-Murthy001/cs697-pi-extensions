@@ -1,0 +1,620 @@
+TAP version 13
+# Subtest: accepts a valid question with 2 options and a recommendation
+not ok 1 - accepts a valid question with 2 options and a recommendation
+  ---
+  duration_ms: 1.498626
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:6:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:8:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: accepts 3 options and no recommendation
+not ok 2 - accepts 3 options and no recommendation
+  ---
+  duration_ms: 0.247179
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:11:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:17:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: rejects invalid input: empty question
+not ok 3 - rejects invalid input: empty question
+  ---
+  duration_ms: 6.568984
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:30:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(r.error.length > 0)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:33:23)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: rejects invalid input: missing reason
+not ok 4 - rejects invalid input: missing reason
+  ---
+  duration_ms: 0.37407
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:30:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(r.error.length > 0)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:33:23)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: rejects invalid input: only one option
+not ok 5 - rejects invalid input: only one option
+  ---
+  duration_ms: 0.300881
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:30:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(r.error.length > 0)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:33:23)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: rejects invalid input: four options
+not ok 6 - rejects invalid input: four options
+  ---
+  duration_ms: 0.181314
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:30:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(r.error.length > 0)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:33:23)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: rejects invalid input: duplicate labels
+not ok 7 - rejects invalid input: duplicate labels
+  ---
+  duration_ms: 0.250797
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:30:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(r.error.length > 0)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:33:23)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: rejects invalid input: empty tradeoff
+not ok 8 - rejects invalid input: empty tradeoff
+  ---
+  duration_ms: 0.164903
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:30:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(r.error.length > 0)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:33:23)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: rejects invalid input: recommendation not an option
+not ok 9 - rejects invalid input: recommendation not an option
+  ---
+  duration_ms: 0.529516
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:30:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+    
+      assert.ok(r.error.length > 0)
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/contract.test.ts:33:23)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: registers a model-callable ask_user tool with a schema and asking guidelines
+not ok 10 - registers a model-callable ask_user tool with a schema and asking guidelines
+  ---
+  duration_ms: 1.489659
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:22:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    load (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:18:10)
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:23:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: execute returns the selected answer to the model
+not ok 11 - execute returns the selected answer to the model
+  ---
+  duration_ms: 0.376014
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:30:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    load (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:18:10)
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:31:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: execute returns a custom answer to the model
+not ok 12 - execute returns a custom answer to the model
+  ---
+  duration_ms: 0.240907
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:40:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    load (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:18:10)
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:41:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: execute reports unavailable when ctx.hasUI is false and never touches the UI
+not ok 13 - execute reports unavailable when ctx.hasUI is false and never touches the UI
+  ---
+  duration_ms: 0.220879
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:47:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    load (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:18:10)
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:48:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: execute reports cancellation
+not ok 14 - execute reports cancellation
+  ---
+  duration_ms: 0.241398
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:55:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    0 !== 1
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 0
+  operator: 'strictEqual'
+  stack: |-
+    load (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:18:10)
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/extension.test.ts:56:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: shows the question, the reason, every option with its tradeoff, and the recommendation
+not ok 15 - shows the question, the reason, every option with its tradeoff, and the recommendation
+  ---
+  duration_ms: 1.164842
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:6:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot destructure property 'title' of 'calls[0]' as it is undefined."
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:9:11)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: selecting an option returns answered with that exact option label
+not ok 16 - selecting an option returns answered with that exact option label
+  ---
+  duration_ms: 1.554632
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:20:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+    + undefined
+    - {
+    -   answer: 'Persist on disk',
+    -   option: 'Persist on disk',
+    -   source: 'option',
+    -   status: 'answered'
+    - }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    status: 'answered'
+    source: 'option'
+    answer: 'Persist on disk'
+    option: 'Persist on disk'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:25:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: selecting an option that contradicts the recommendation is preserved, not overridden
+not ok 17 - selecting an option that contradicts the recommendation is preserved, not overridden
+  ---
+  duration_ms: 0.197886
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:28:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'status')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:32:18)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: a custom answer is returned exactly (trimmed)
+not ok 18 - a custom answer is returned exactly (trimmed)
+  ---
+  duration_ms: 0.41584
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:36:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+    + undefined
+    - {
+    -   answer: 'Persist, but only for 24 hours',
+    -   source: 'custom',
+    -   status: 'answered'
+    - }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    status: 'answered'
+    source: 'custom'
+    answer: 'Persist, but only for 24 hours'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:39:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: dismissing the selector returns cancelled and never picks a default
+not ok 19 - dismissing the selector returns cancelled and never picks a default
+  ---
+  duration_ms: 0.385352
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:43:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+    + undefined
+    - {
+    -   reason: 'dismissed',
+    -   status: 'cancelled'
+    - }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    status: 'cancelled'
+    reason: 'dismissed'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:46:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: dismissing the custom-answer input returns cancelled
+not ok 20 - dismissing the custom-answer input returns cancelled
+  ---
+  duration_ms: 0.26876
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:49:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+    + undefined
+    - {
+    -   reason: 'dismissed',
+    -   status: 'cancelled'
+    - }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    status: 'cancelled'
+    reason: 'dismissed'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:52:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: an empty custom answer returns cancelled (empty_answer), not consent
+not ok 21 - an empty custom answer returns cancelled (empty_answer), not consent
+  ---
+  duration_ms: 0.31097
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:55:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+    + undefined
+    - {
+    -   reason: 'empty_answer',
+    -   status: 'cancelled'
+    - }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    status: 'cancelled'
+    reason: 'empty_answer'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:58:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: no UI returns unavailable without opening any dialog
+not ok 22 - no UI returns unavailable without opening any dialog
+  ---
+  duration_ms: 0.220829
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:61:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+    + undefined
+    - {
+    -   reason: 'no_interactive_ui',
+    -   status: 'unavailable'
+    - }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    status: 'unavailable'
+    reason: 'no_interactive_ui'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:63:10)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: invalid input returns invalid without opening any dialog
+not ok 23 - invalid input returns invalid without opening any dialog
+  ---
+  duration_ms: 0.398947
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:66:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'status')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:69:18)
+    async Test.run (node:internal/test_runner/test:1054:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: model-facing text states each outcome explicitly
+not ok 24 - model-facing text states each outcome explicitly
+  ---
+  duration_ms: 0.590301
+  type: 'test'
+  location: '/sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:73:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /answered.*Session only/i. Input:
+    
+    ''
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: ''
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (file:///sessions/rcw-01fr6kuchbbnahuerpjxfs8i/mnt/CS697/cs697-pi-extensions/tests/ask-user/interaction.test.ts:74:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..24
+# tests 24
+# suites 0
+# pass 0
+# fail 24
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 528.108003

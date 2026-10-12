@@ -30,3 +30,43 @@ A Pi extension that reminds the user to stop working during late-night hours.
 | Midnight on the next date | Remind again |
 
 _Loading and test instructions are added once the extension is implemented._
+
+## W2 — Ask the Human (`ask_user` tool)
+
+A Pi extension that registers a model-callable `ask_user` tool. The agent uses it when an unresolved choice materially changes user-visible behavior, scope, or rework. The tool shows one question, why it matters, 2–3 options with tradeoffs and an optional recommendation; the user picks an option or writes a custom answer, and the result goes back to the agent.
+
+- **Results:** `answered` (option or custom, preserved exactly), `cancelled` (dismissed or empty answer — never a default), `unavailable` (no dialog UI — never claims consent), `invalid` (bad input, model should fix the call).
+- **Contract, asking policy and task plan:** [`docs/w2/plan.md`](docs/w2/plan.md). **Review cases:** [`docs/w2/review.md`](docs/w2/review.md).
+
+```
+extensions/ask-user/
+  index.ts        registerTool("ask_user"): TypeBox schema, description, prompt guidelines (when to ask / proceed)
+  interaction.ts  select/input dialog flow, result mapping, model-facing text
+  contract.ts     input/result types and validation
+tests/ask-user/   contract, interaction (fake dialog UI) and registration tests
+```
+
+### Run the tests
+
+```bash
+npm install   # dev dependency: typebox (used by the tool schema)
+npm test
+```
+
+### Use it in Pi
+
+```bash
+pi --extension ./extensions/ask-user/index.ts
+```
+
+Example prompt with an unresolved choice:
+
+> Add a small config file for the midnight reminder with the reminder message and quiet hours. I haven't decided between JSON and YAML — users will edit it by hand. Don't write any code yet; just create the file.
+
+The agent calls `ask_user`; pick an option (or write your own answer) and the agent creates the file in that format. With a fully specified prompt ("…as JSON") it proceeds without asking.
+
+### Demo script
+
+Windows: `powershell -ExecutionPolicy Bypass -File scripts\demo-w2.ps1` · bash/macOS: `scripts/demo-w2.sh`
+
+It runs the ask_user tests, then starts Pi in an empty `demo-sandbox/` folder with a task that leaves JSON-vs-YAML open. The agent calls `ask_user`; choose an option (or write your own) and the agent creates the config file in that format.
